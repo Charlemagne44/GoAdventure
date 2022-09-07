@@ -1,5 +1,22 @@
 @startuml
+protocol   Controller
+class   View {
+    --Functions--
+    void printOptions()
+}
+class   Model {
+    --Attributes--
+    World world
+    --Functions--
+}
 
-Alice -> Bob: test
+class World {
+    map[]string Locations
+}
+
+Controller <-- Model : controls >
+Controller <-- View : controls >
+Model <-- World
+
 
 @enduml
