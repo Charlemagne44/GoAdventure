@@ -25,6 +25,7 @@ class   Model {
     - World world
     --Methods--
     + void directControllerInput()
+    + void initialize()
 }
 note right of Model::directControllerInput
     Takes command from controller 
@@ -62,6 +63,7 @@ Controller <-- Model : controls >
 Controller <-- View : controls >
 Model <-- World : contains
 World <-- Location : contains
+World::setCurrLocation <-- Location::checkIfNeighbor
 
 
 @enduml

@@ -24,3 +24,13 @@ func (w *world) setCurrLocation(currLoc, newLoc *location) {
 		fmt.Printf("Loc %s is not a neighbor of current loc %s\n", newLoc.name, currLoc.name)
 	}
 }
+
+func (w *world) createLocation(filename string) {
+	//TODO read in JSON to create a map of locations
+	//modify w.locations
+}
+
+func (w *world) initialize() {
+	//create locations
+	//other steps to initialize the world later on can be added here
+}
