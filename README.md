@@ -1,4 +1,4 @@
 # Golang Text Adventure Engine
 
 ## Class Diagram
-![Class diagram image](/diagram.png)
+![Class diagram image](/class_diagram.png)
