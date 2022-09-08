@@ -1,4 +1,4 @@
-@startuml
+@startuml class_diagram
 protocol   Controller {
     --Attributes--
     + Model model
@@ -38,7 +38,7 @@ class World {
     - Location currLocation
     --Methods--
     + Location getCurrLocation()
-    + Location setCurrLocation(string currLocName, string newLocName)
+    + Location setCurrLocation(*location currLocName, *location newLocName)
     - void createLocations(string filename)
     + void initialize()
 }
@@ -50,10 +50,11 @@ end note
 class Location {
     --Attributes--
     - string name 
-    - []string neighbors
+    - []location neighbors
     --Methods--
     + string getName()
-    + string getNeighbors(string loc)
+    + location getNeighbors(string loc)
+    + bool checkIfNeighbor(currLoc *location, newLoc *location)
 
 }
 
