@@ -1,22 +1,47 @@
 @startuml
-protocol   Controller
+protocol   Controller {
+    --Attributes--
+    + Model model
+    + View view
+    --Functions--
+    + void loop()
+}
 class   View {
     --Functions--
-    void printOptions()
+    + void printOptions()
 }
 class   Model {
     --Attributes--
-    World world
-    --Functions--
+    - World world
+    --Methods--
+    + void directControllerInput()
 }
 
 class World {
-    map[]string Locations
+    --Attributes--
+    - map[string][Location] locations
+    - Location currLocation
+    --Methods--
+    + Location getCurrLocation()
+    + Location setCurrLocation(string currLocName, string newLocName)
+    - void createLocations(string filename)
+    + void initialize()
+}
+
+class Location {
+    --Attributes--
+    - string name 
+    - []string neighbors
+    --Methods--
+    + string getName()
+    + string getNeighbors(string loc)
+
 }
 
 Controller <-- Model : controls >
 Controller <-- View : controls >
-Model <-- World
+Model <-- World : contains
+World <-- Location : contains
 
 
 @enduml
