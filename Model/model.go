@@ -1,5 +1,6 @@
 package Model
 
-type World struct {
-	Num int
+type model struct {
+	locations    map[string]*location
+	currLocation *location
 }
