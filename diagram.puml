@@ -4,18 +4,33 @@ protocol   Controller {
     + Model model
     + View view
     --Functions--
-    + void loop()
+    + void loop() : sends commands to model / view
 }
+note right of Controller::loop
+    The main loop of the program that
+    prints options, takes input, and
+    sends to view / model
+end note
 class   View {
     --Functions--
     + void printOptions()
 }
+note right of View::printOptions
+    Prints all the viable options
+    depending on the player location
+    and items that may be there
+end note
 class   Model {
     --Attributes--
     - World world
     --Methods--
     + void directControllerInput()
 }
+note right of Model::directControllerInput
+    Takes command from controller 
+    and directs to proper model
+    methods
+end note
 
 class World {
     --Attributes--
@@ -27,6 +42,10 @@ class World {
     - void createLocations(string filename)
     + void initialize()
 }
+note right of World::createLocations
+    Takes JSON input to create locations
+    for the worlds to be used
+end note
 
 class Location {
     --Attributes--
