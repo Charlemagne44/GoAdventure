@@ -1,5 +1,10 @@
-all:
+all: game
+
+game:
 	go build .
 
 clean:
-	rm game.exe
+	go clean -v
+
+.PHONY:
+	all
