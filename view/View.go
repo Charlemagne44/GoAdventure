@@ -1,4 +1,4 @@
-package View
+package view
 
 type view struct {
 	str string
