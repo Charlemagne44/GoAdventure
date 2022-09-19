@@ -5,16 +5,16 @@ type location struct {
 	neighbors []location
 }
 
-func (inp *location) getName(loc *location) string {
-	return loc.name
+func (inp *location) getName() string {
+	return inp.name
 }
 
-func (inp *location) getNeighbors(loc *location) []location {
-	return loc.neighbors
+func (inp *location) getNeighbors() []location {
+	return inp.neighbors
 }
 
 func (inp *location) checkIfNeighbor(currLoc, newLoc *location) bool {
-	for _, neighbor := range currLoc.neighbors {
+	for _, neighbor := range inp.neighbors {
 		if neighbor.name == newLoc.name {
 			return true
 		}
