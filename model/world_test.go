@@ -12,10 +12,10 @@ func TestGetCurrLocation(t *testing.T) {
 	t.Log(currLoc.getName())
 }
 
-// //ceasing to test BASIC getters and setters after world
+//ceasing to test BASIC getters and setters after world
 
-// // this is an exception, there are neighbor logic
-// // checks in this particular setter
+// this is an exception, there are neighbor logic
+// checks in this particular setter
 func TestSetCurrLocation(t *testing.T) {
 	loc1 := Location{Name: "test1", Neighbors: make([]Location, 0)}
 	loc2 := Location{Name: "test2", Neighbors: make([]Location, 0)}
