@@ -11,6 +11,10 @@ type World struct {
 	CurrLocation Location
 }
 
+func init() {
+	fmt.Println("DEBUG: world initialized")
+}
+
 func (w World) getCurrLocation() Location {
 	return w.CurrLocation
 }

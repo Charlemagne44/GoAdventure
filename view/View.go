@@ -1,5 +1,5 @@
 package view
 
-type view struct {
-	str string
+type View struct {
+	Str string
 }
