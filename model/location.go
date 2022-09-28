@@ -5,17 +5,19 @@ type Location struct {
 	Neighbors []Location
 }
 
-func (inp Location) getName() string {
-	return inp.Name
+func (l *Location) GetName() string {
+	return l.Name
 }
 
-func (inp Location) getNeighbors() []Location {
-	return inp.Neighbors
+func (l *Location) GetNeighbors() []Location {
+	return l.Neighbors
 }
 
-func (inp Location) checkIfNeighbor(currLoc, newLoc Location) bool {
-	for _, neighbor := range inp.Neighbors {
-		if neighbor.Name == newLoc.Name {
+func (l *Location) CheckIfNeighbor(loc2 *Location) bool {
+	// go through list of current loc neighbors, check to see
+	// if it's in the list of neighbors
+	for _, n := range l.Neighbors {
+		if n.Name == l.Name {
 			return true
 		}
 	}
