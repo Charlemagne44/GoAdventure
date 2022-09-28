@@ -24,3 +24,15 @@ func TestSetCurrLocation(t *testing.T) {
 		t.Fatal()
 	}
 }
+
+func TestInitializeLocations(t *testing.T) {
+	filename := "../resources/world.json"
+	err, locs := InitializeLocations(filename)
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, l := range locs {
+		t.Logf("%v\n", l)
+	}
+
+}

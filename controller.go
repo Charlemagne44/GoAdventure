@@ -1,9 +1,10 @@
 package main
 
 import (
-	"fmt"
+	"game/model"
 )
 
 func main() {
-	fmt.Println("Testing")
+	var m model.Model
+	_ = m
 }
