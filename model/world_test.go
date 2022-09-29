@@ -5,8 +5,8 @@ import "testing"
 func TestSetCurrLocation(t *testing.T) {
 	loc1 := Location{Name: "loc1"}
 	loc2 := Location{Name: "loc2"}
-	loc1.Neighbors = append(loc1.Neighbors, loc2)
-	loc2.Neighbors = append(loc2.Neighbors, loc1)
+	loc1.Neighbors = append(loc1.Neighbors, loc2.Name)
+	loc2.Neighbors = append(loc2.Neighbors, loc1.Name)
 	w := World{
 		CurrLocation: loc1,
 		Locations:    make(map[string]Location),

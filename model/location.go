@@ -1,15 +1,15 @@
 package model
 
 type Location struct {
-	Name      string     `json:"name"`
-	Neighbors []Location `json:"locations"`
+	Name      string   `json:"name"`
+	Neighbors []string `json:"locations"`
 }
 
 func (l *Location) GetName() string {
 	return l.Name
 }
 
-func (l *Location) GetNeighbors() []Location {
+func (l *Location) GetNeighbors() []string {
 	return l.Neighbors
 }
 
@@ -21,7 +21,7 @@ func (l *Location) CheckIfNeighbor(loc2 *Location) bool {
 	for _, n := range l.Neighbors {
 		// DEBUG
 		// log.Printf("neighbor name: %v\n", n.Name)
-		if n.Name == loc2.Name {
+		if n == loc2.Name {
 			return true
 		}
 	}

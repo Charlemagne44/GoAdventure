@@ -15,7 +15,7 @@ func TestCheckIfNeightbor(t *testing.T) {
 	l := Location{}
 	l2 := Location{}
 
-	l.Neighbors = append(l.Neighbors, l2)
+	l.Neighbors = append(l.Neighbors, l2.Name)
 
 	if !l.CheckIfNeighbor(&l2) {
 		t.Fatal()
