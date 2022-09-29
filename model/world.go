@@ -32,12 +32,12 @@ func (w *World) SetCurrLocation(newLoc Location) {
 	}
 }
 
-func InitializeLocations(filename string) (error, []string) {
+func InitializeLocations(filename string) ([]Location, error) {
 	// reads through a JSON file to initialize worlds
 	// the reading goes one level up, so the world.json creates the locations contained by world
 	jsonFile, err := os.Open(filename)
 	if err != nil {
-		return err, nil
+		return nil, err
 	}
 	defer jsonFile.Close()
 
@@ -45,14 +45,14 @@ func InitializeLocations(filename string) (error, []string) {
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
 	// we initialize our Users array
-	var locs []string
+	var locs []Location
 
 	// we unmarshal our byteArray which contains our
 	// jsonFile's content into 'users' which we defined above
 	err = json.Unmarshal(byteValue, &locs)
 	if err != nil {
-		return err, nil
+		return nil, err
 	}
 
-	return err, locs
+	return locs, err
 }

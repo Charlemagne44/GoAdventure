@@ -27,7 +27,7 @@ func TestSetCurrLocation(t *testing.T) {
 
 func TestInitializeLocations(t *testing.T) {
 	filename := "../resources/world.json"
-	err, locs := InitializeLocations(filename)
+	locs, err := InitializeLocations(filename)
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -1,8 +1,14 @@
 [
     {
         "Name": "loc1",
-        "Neighbors": [""]
+        "Neighbors": ["loc2"]
     },
-    {},
-    {}
+    {
+        "Name": "loc2",
+        "Neighbors": ["loc1", "loc3"]
+    },
+    {
+        "Name": "loc3",
+        "Neighbors": ["loc2"]
+    }
 ]
