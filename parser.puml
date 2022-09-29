@@ -1,0 +1,16 @@
+@startuml parserStructure
+
+class DA {
+
+}
+
+class IO {
+
+}
+
+class DO {
+
+}
+
+
+@enduml
