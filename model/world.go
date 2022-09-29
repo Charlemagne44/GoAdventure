@@ -41,13 +41,13 @@ func InitializeLocations(filename string) ([]Location, error) {
 	}
 	defer jsonFile.Close()
 
-	// read our opened jsonFile as a byte array.
+	// read opened jsonFile as a byte array.
 	byteValue, _ := ioutil.ReadAll(jsonFile)
 
-	// we initialize our Users array
+	// initialize Users array
 	var locs []Location
 
-	// we unmarshal our byteArray which contains our
+	// unmarshal our byteArray which contains our
 	// jsonFile's content into 'users' which we defined above
 	err = json.Unmarshal(byteValue, &locs)
 	if err != nil {

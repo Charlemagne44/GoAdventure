@@ -32,7 +32,8 @@ func TestInitializeLocations(t *testing.T) {
 		t.Fatal(err)
 	}
 	for _, l := range locs {
-		t.Logf("%v\n", l)
+		t.Logf("location: %v\n", l.Name)
+		t.Logf("location neighbors: %v\n", l.Neighbors)
 	}
 
 }
