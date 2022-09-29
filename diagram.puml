@@ -5,12 +5,18 @@ protocol   Controller {
     + View View
     --Functions--
     + void loop() : sends commands to model / view
+    + string determineCommand(string command)
 }
 note right of Controller::loop
     The main loop of the program that
     prints options, takes input, and
     sends to view / model
 end note
+note right of Controller::determineCommand
+    This will return a string determining
+    if the command should be sent to model or view
+end note
+
 class   View {
     --Functions--
     + void PrintOptions()
@@ -20,6 +26,7 @@ note right of View::printOptions
     depending on the player location
     and items that may be there
 end note
+
 class   Model {
     --Attributes--
     - World World
@@ -56,14 +63,18 @@ class Location {
     + string GetName()
     + []string GetNeighbors(string loc)
     + bool CheckIfNeighbor(currLoc *location, newLoc *location)
+}
 
+annotation Resources {
+    --Files--
+    - json World: Contains all locations
 }
 
 Controller <-- Model : controls >
 Controller <-- View : controls >
 Model <-- World : contains
 World <-- Location : contains
-World::setCurrLocation <-- Location::checkIfNeighbor
+World::SetCurrLocation <-- Location::CheckIfNeighbor : uses <
 
 
 @enduml

@@ -9,6 +9,8 @@ import (
 
 type World struct {
 	// the string that maps to Loc objects will just be the Location.Name
+	// currently json doesn't read directly into the map, but rather a list of
+	// locations, this map is created in InitializeWorld and set there
 	Locations    map[string]Location
 	CurrLocation Location
 }
