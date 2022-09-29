@@ -47,8 +47,9 @@ class World {
     --Methods--
     + Location GetCurrLocation()
     + Location SetCurrLocation(*location currLocName, *location newLocName)
-    /'- void CreateLocation(string filename)'/
-    + void InitializeLocations(string filePath)
+    + void InitializeWorld(w *World, string worldFile)
+    - void initializeLocations(w *World, string filePath)
+    - map[string]Location createLocationMaps(w *World, []Location locs)
 }
 note right of World::createLocations
     Takes JSON input to create locations
