@@ -13,9 +13,31 @@ type World struct {
 	CurrLocation Location
 }
 
-func init() {
-	// initialize locations
-	InitializeLocations("../resources/world.json")
+func (w *World) InitializeWorld(worldFile string) {
+	// initialize location list
+	locs, err := InitializeLocations(worldFile)
+	if err != nil {
+		log.Printf("Loc list init: %v\n", err)
+	}
+
+	// DEBUG show the first loc
+	// log.Printf("first loc: %v\n", locs[0].Name)
+
+	// create Locations map out of list
+	w.Locations = CreateLocationsMap(locs)
+
+	// initialize current location
+	// TODO decide a way to determine first lock
+	// if not the first one in JSON
+	w.CurrLocation = locs[0]
+}
+
+func CreateLocationsMap(locs []Location) map[string]Location {
+	locMap := make(map[string]Location, 0)
+	for _, loc := range locs {
+		locMap[loc.Name] = loc
+	}
+	return locMap
 }
 
 func (w *World) GetCurrLocation() Location {

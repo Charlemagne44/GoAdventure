@@ -1,8 +1,8 @@
 @startuml class_diagram
 protocol   Controller {
     --Attributes--
-    + Model model
-    + View view
+    + Model Model
+    + View View
     --Functions--
     + void loop() : sends commands to model / view
 }
@@ -13,7 +13,7 @@ note right of Controller::loop
 end note
 class   View {
     --Functions--
-    + void printOptions()
+    + void PrintOptions()
 }
 note right of View::printOptions
     Prints all the viable options
@@ -22,10 +22,10 @@ note right of View::printOptions
 end note
 class   Model {
     --Attributes--
-    - World world
+    - World World
     --Methods--
-    + void directControllerInput()
-    + void initialize()
+    + void DirectControllerInput()
+    + void InitializeWorld()
 }
 note right of Model::directControllerInput
     Takes command from controller 
@@ -35,13 +35,13 @@ end note
 
 class World {
     --Attributes--
-    - []Location locations
-    - Location currLocation
+    - []Location Locations
+    - Location CurrLocation
     --Methods--
-    + Location getCurrLocation()
-    + Location setCurrLocation(*location currLocName, *location newLocName)
-    /'- void createLocation(string filename)'/
-    + void initializeLocations(string filePath)
+    + Location GetCurrLocation()
+    + Location SetCurrLocation(*location currLocName, *location newLocName)
+    /'- void CreateLocation(string filename)'/
+    + void InitializeLocations(string filePath)
 }
 note right of World::createLocations
     Takes JSON input to create locations
@@ -50,12 +50,12 @@ end note
 
 class Location {
     --Attributes--
-    - string name 
-    - []string neighbors
+    - string Name 
+    - []string Neighbors
     --Methods--
-    + string getName()
-    + []string getNeighbors(string loc)
-    + bool checkIfNeighbor(currLoc *location, newLoc *location)
+    + string GetName()
+    + []string GetNeighbors(string loc)
+    + bool CheckIfNeighbor(currLoc *location, newLoc *location)
 
 }
 
