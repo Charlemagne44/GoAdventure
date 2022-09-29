@@ -1,16 +1,8 @@
-{
-    "locations": {
-        "loc1": {
-            "name": "loc1",
-            "neighbors": ["loc2"]
-        },
-        "loc2": {
-            "name": "loc2",
-            "neighbors": ["loc1", "loc3"]
-        },
-        "loc3": {
-            "name": "loc3",
-            "neighbors": ["loc2"]
-        }
-    }
-}
+[
+    {
+        "Name": "loc1",
+        "Neighbors": [""]
+    },
+    {},
+    {}
+]

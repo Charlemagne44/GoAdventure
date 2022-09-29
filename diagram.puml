@@ -35,7 +35,7 @@ end note
 
 class World {
     --Attributes--
-    - map[string][Location] locations
+    - []Location locations
     - Location currLocation
     --Methods--
     + Location getCurrLocation()
@@ -51,10 +51,10 @@ end note
 class Location {
     --Attributes--
     - string name 
-    - []location neighbors
+    - []string neighbors
     --Methods--
     + string getName()
-    + location getNeighbors(string loc)
+    + []string getNeighbors(string loc)
     + bool checkIfNeighbor(currLoc *location, newLoc *location)
 
 }
