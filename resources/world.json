@@ -1,0 +1,7 @@
+{
+    "locations": {
+        "loc1": ["loc2"],
+        "loc2": ["loc1", "loc3"],
+        "loc3": ["loc2"]
+    }
+}
