@@ -21,7 +21,7 @@ class   View {
     --Functions--
     + void PrintOptions()
 }
-note right of View::printOptions
+note right of View::PrintOptions
     Prints all the viable options
     depending on the player location
     and items that may be there
@@ -34,7 +34,7 @@ class   Model {
     + void DirectControllerInput()
     + void InitializeWorld()
 }
-note right of Model::directControllerInput
+note right of Model::DirectControllerInput
     Takes command from controller 
     and directs to proper model
     methods
@@ -51,9 +51,9 @@ class World {
     - void initializeLocations(w *World, string filePath)
     - map[string]Location createLocationMaps(w *World, []Location locs)
 }
-note right of World::createLocations
+note right of World::initializeLocations
     Takes JSON input to create locations
-    for the worlds to be used
+    for the world to be store
 end note
 
 class Location {
