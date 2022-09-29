@@ -1,10 +1,13 @@
 package main
 
 import (
+	"fmt"
 	"game/model"
 )
 
 func main() {
 	var m model.Model
-	_ = m
+	m.World.InitializeWorld("resources/world.json")
+	// DEBUG
+	fmt.Println(m.World.GetCurrLocation().Name)
 }
