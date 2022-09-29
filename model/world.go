@@ -17,7 +17,7 @@ type World struct {
 
 func (w *World) InitializeWorld(worldFile string) {
 	// initialize location list
-	locs, err := InitializeLocations(worldFile)
+	locs, err := initializeLocations(worldFile)
 	if err != nil {
 		log.Printf("Loc list init: %v\n", err)
 	}
@@ -26,7 +26,7 @@ func (w *World) InitializeWorld(worldFile string) {
 	// log.Printf("first loc: %v\n", locs[0].Name)
 
 	// create Locations map out of list
-	w.Locations = CreateLocationsMap(locs)
+	w.Locations = createLocationsMap(locs)
 
 	// initialize current location
 	// TODO decide a way to determine first lock
@@ -34,7 +34,7 @@ func (w *World) InitializeWorld(worldFile string) {
 	w.CurrLocation = locs[0]
 }
 
-func CreateLocationsMap(locs []Location) map[string]Location {
+func createLocationsMap(locs []Location) map[string]Location {
 	locMap := make(map[string]Location, 0)
 	for _, loc := range locs {
 		locMap[loc.Name] = loc
@@ -56,7 +56,7 @@ func (w *World) SetCurrLocation(newLoc Location) {
 	}
 }
 
-func InitializeLocations(filename string) ([]Location, error) {
+func initializeLocations(filename string) ([]Location, error) {
 	// reads through a JSON file to initialize worlds
 	// the reading goes one level up, so the world.json creates the locations contained by world
 	jsonFile, err := os.Open(filename)
