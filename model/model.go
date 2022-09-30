@@ -12,19 +12,6 @@ type Model struct {
 	World World
 }
 
-// for reading through JSON
-type DirectAction struct {
-	Actions []string
-}
-
-type DirectObject struct {
-	Objects []string
-}
-
-type IndirectObject struct {
-	Objects []string
-}
-
 func (m *Model) Parse(raw string) (directAct, indirectObj, directObj string) {
 	var DA, IO, DO = "", "", ""
 	// split into words
@@ -87,5 +74,5 @@ func (m *Model) Exec(directAct, indirectObj, directObj string) {
 }
 
 func (m *Model) Initialize() {
-
+	m.World.InitializeWorld("../resources/world.json")
 }
