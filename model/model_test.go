@@ -18,8 +18,15 @@ func TestParse(t *testing.T) {
 	m := Model{}
 	m.Initialize()
 
-	da, _, _ := m.Parse("move east")
-	if da != "move" {
+	da, io, do := m.Parse("open door with sword")
+	t.Logf("%v, %v, %v\n", da, io, do)
+	if da != "open" {
 		t.Fatal("Did not identify proper action")
+	}
+	if io != "sword" {
+		t.Fatal("Did not identify proper IO")
+	}
+	if do != "door" {
+		t.Fatal("Did not identify proper DO")
 	}
 }

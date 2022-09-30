@@ -1,5 +1,6 @@
 [
     "move",
     "walk",
-    "go"
+    "go",
+    "open"
 ]
