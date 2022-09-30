@@ -1,4 +1,12 @@
 [
+    "north",
+    "south",
+    "east",
+    "west",
+    "n",
+    "s",
+    "e",
+    "w",
     "table",
     "door"
 ]
