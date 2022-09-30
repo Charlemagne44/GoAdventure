@@ -32,7 +32,9 @@ class   Model {
     - World World
     --Methods--
     + void DirectControllerInput()
-    + void InitializeWorld()
+    + void Intialize()
+    + (string x 3) Parse(string raw)
+    - (bool, error) checkType(word, filename string)
 }
 note right of Model::DirectControllerInput
     Takes command from controller 
@@ -47,7 +49,7 @@ class World {
     --Methods--
     + Location GetCurrLocation()
     + Location SetCurrLocation(*location currLocName, *location newLocName)
-    + void InitializeWorld(w *World, string worldFile)
+    + void Intialize(w *World, string worldFile)
     - void initializeLocations(w *World, string filePath)
     - map[string]Location createLocationMaps(w *World, []Location locs)
 }
