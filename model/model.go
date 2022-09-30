@@ -29,19 +29,20 @@ func (m *Model) Parse(raw string) (directAct, indirectObj, directObj string) {
 		// fmt.Printf("DEBUG: word being matched in parser: %v\n", word) // DEBUG
 
 		// check DA
-		if b, err := checkType(word, "resources/directAction.json"); b {
-			if err != nil {
-				fmt.Printf("%v\n", err)
-			}
-			// fmt.Printf("DEBUG: detected DA of %v\n", word) // DEBUG
-			DA = word
-		} else if b, err := checkType(word, "resources/directObject.json"); b { // check DO
-			if err != nil {
-				fmt.Printf("%v\n", err)
-			}
-			// fmt.Printf("DEBUG: detected DO of %v\n", word) // DEBUG
-			DO = word
-		} else if b, err := checkType(word, "resources/indirectObject.json"); b { // check IO
+		// if b, err := checkType(word, "resources/directAction.json"); b {
+		// 	if err != nil {
+		// 		fmt.Printf("%v\n", err)
+		// 	}
+		// 	// fmt.Printf("DEBUG: detected DA of %v\n", word) // DEBUG
+		// 	DA = word
+		// } else if b, err := checkType(word, "resources/directObject.json"); b { // check DO
+		// 	if err != nil {
+		// 		fmt.Printf("%v\n", err)
+		// 	}
+		// 	// fmt.Printf("DEBUG: detected DO of %v\n", word) // DEBUG
+		// 	DO = word
+		// } else
+		if b, err := checkType(word, "resources/indirectObject.json"); b { // check IO
 			if err != nil {
 				fmt.Printf("%v\n", err)
 			}

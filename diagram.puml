@@ -62,10 +62,31 @@ class Location {
     --Attributes--
     - string Name 
     - []string Neighbors
+    - []Object Objects
     --Methods--
     + string GetName()
     + []string GetNeighbors(string loc)
     + bool CheckIfNeighbor(currLoc *location, newLoc *location)
+}
+
+class Object {
+    --Attributes--
+    - string Name
+    - int Capacity
+    --Methods--
+    + string GetName(Object o)
+    + void SetName(Object o)
+    + int GetCapacity(Object o)
+    + void SetCapacity(Object o)
+}
+
+class Inventory {
+    --Attributes--
+    + []Object Objects
+    + int Capacity
+    --Methods--
+    + void AddToInventory(Object o)
+    + void RemoveFromInventory(Object o)
 }
 
 annotation Resources {
@@ -77,6 +98,9 @@ Controller <-- Model : controls >
 Controller <-- View : controls >
 Model <-- World : contains
 World <-- Location : contains
+World <-- Inventory : contains
+Location <-- Object : contains
+Inventory <-- Object : contains
 World::SetCurrLocation <-- Location::CheckIfNeighbor : uses <
 
 
