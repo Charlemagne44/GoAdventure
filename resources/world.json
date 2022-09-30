@@ -2,7 +2,8 @@
     {
         "Name": "loc1",
         "Neighbors": ["loc2"],
-        "Desc": "Desc of loc1"
+        "Desc": "Desc of loc1",
+        "Objects": ["sword"]
     },
     {
         "Name": "loc2",
