@@ -12,6 +12,8 @@ func main() {
 	var v view.View
 	m.World.InitializeWorld("resources/world.json")
 
+	v.ShowState(&m)
+
 	// main game loop
 	running := true
 	for running {
@@ -25,10 +27,10 @@ func main() {
 		m.Exec(directAct, indirectObj, directObj)
 
 		// output results via view
-		v.ShowState()
+		v.ShowState(&m)
 
 		// DEBUG
-		running = false
+		//running = false
 	}
 
 }

@@ -1,14 +1,17 @@
 [
     {
         "Name": "loc1",
-        "Neighbors": ["loc2"]
+        "Neighbors": ["loc2"],
+        "Desc": "Desc of loc1"
     },
     {
         "Name": "loc2",
-        "Neighbors": ["loc1", "loc3"]
+        "Neighbors": ["loc1", "loc3"],
+        "Desc": "Desc of loc2"
     },
     {
         "Name": "loc3",
-        "Neighbors": ["loc2"]
+        "Neighbors": ["loc2"],
+        "Desc": "Desc of loc3"
     }
 ]

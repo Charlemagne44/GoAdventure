@@ -3,6 +3,7 @@ package model
 type Location struct {
 	Name      string   `json:"Name"`
 	Neighbors []string `json:"Neighbors"`
+	Desc      string   `json: Desc`
 }
 
 func (l *Location) GetName() string {
